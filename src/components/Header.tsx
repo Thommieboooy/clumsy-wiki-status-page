@@ -1,7 +1,11 @@
 
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Header = () => {
+  const { user, isAdmin, signOut } = useAuth();
+
   return (
     <div className="bg-blue-200 p-4 border-b-2 border-blue-500">
       <div className="text-center">
@@ -26,6 +30,28 @@ const Header = () => {
         <Link to="/help" className="px-3 py-1 bg-white text-blue-800 border border-blue-500 hover:bg-blue-100">
           Help
         </Link>
+        
+        {user ? (
+          <>
+            {isAdmin && (
+              <Link to="/admin" className="px-3 py-1 bg-green-500 text-white border border-green-600 hover:bg-green-600">
+                Admin Panel
+              </Link>
+            )}
+            <Button
+              onClick={signOut}
+              variant="outline"
+              size="sm"
+              className="px-3 py-1 bg-red-500 text-white border border-red-600 hover:bg-red-600"
+            >
+              Uitloggen
+            </Button>
+          </>
+        ) : (
+          <Link to="/login" className="px-3 py-1 bg-green-500 text-white border border-green-600 hover:bg-green-600">
+            Inloggen
+          </Link>
+        )}
       </div>
     </div>
   );
