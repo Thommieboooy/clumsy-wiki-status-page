@@ -14,6 +14,9 @@ const Header = () => {
         <Link to="/" className="px-3 py-1 bg-white text-blue-800 border border-blue-500 hover:bg-blue-100">
           Home
         </Link>
+        <Link to="/wiki" className="px-3 py-1 bg-white text-blue-800 border border-blue-500 hover:bg-blue-100">
+          Wiki
+        </Link>
         <Link to="/status" className="px-3 py-1 bg-white text-blue-800 border border-blue-500 hover:bg-blue-100">
           Server Status
         </Link>

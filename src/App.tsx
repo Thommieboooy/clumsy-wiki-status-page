@@ -9,6 +9,10 @@ import NotFound from "./pages/NotFound";
 import ServerStatus from "./pages/ServerStatus";
 import AboutPage from "./pages/AboutPage";
 import HelpPage from "./pages/HelpPage";
+import WikiIndex from "./pages/wiki/WikiIndex";
+import ITProcedures from "./pages/wiki/ITProcedures";
+import MeetingRooms from "./pages/wiki/MeetingRooms";
+import EmergencyProcedures from "./pages/wiki/EmergencyProcedures";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +27,10 @@ const App = () => (
           <Route path="/status" element={<ServerStatus />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/help" element={<HelpPage />} />
+          <Route path="/wiki" element={<WikiIndex />} />
+          <Route path="/wiki/it-procedures" element={<ITProcedures />} />
+          <Route path="/wiki/meeting-rooms" element={<MeetingRooms />} />
+          <Route path="/wiki/emergency-procedures" element={<EmergencyProcedures />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
